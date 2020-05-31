@@ -1,3 +1,20 @@
+.franklin-content .outlinks ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.franklin-content .outlinks li {
+    display: inline-block;
+}
+
+.franklin-content .outlinks img {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 40px;
+}
+
 .franklin-content .headshot img {
     border-radius: 50%;
     width: 90px;

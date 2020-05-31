@@ -1,6 +1,12 @@
 @def title = "Seth Axen"
 @def tags = ["seth axen"]
 
+@@outlinks
+- [\figalt{Google Scholar}{./googlescholar.svg}](https://scholar.google.com/citations?user=ql1INXcAAAAJ/)
+- [\figalt{GitHub}{./github.svg}](https://github.com/sethaxen/)
+- [\figalt{LinkedIn}{./linkedin.svg}](https://www.linkedin.com/in/sethaxen/)
+- [\figalt{Twitter}{./twitter.svg}](https://twitter.com/sethaxen/)
+@@
 
 @@headshot
 \figalt{Seth Axen}{./seth_thumb.jpg}
