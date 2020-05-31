@@ -1,0 +1,9 @@
+.franklin-content .headshot img {
+    border-radius: 50%;
+    width: 90px;
+    float: left;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: 20px;
+    margin-top: 1em;
+}
