@@ -14,7 +14,6 @@ I am a passionate advocate for open source software, and contribute to many open
 - [Manifolds.jl](https://github.com/JuliaManifolds/Manifolds.jl): algorithms and statistics on manifolds
 - [ChainRules.jl](https://github.com/JuliaDiff/ChainRules.jl): generic automatic differentiation rules
 - [e3fp](https://github.com/keiserlab/e3fp): 3D molecular fingerprinting
-Most of my contributions are to packages written in the [Julia language](https://julialang.org/).
 
 Follow me on [GitHub](https://github.com/sethaxen/), [Twitter](https://twitter.com/sethaxen/), or [LinkedIn](https://www.linkedin.com/in/sethaxen/).
 
