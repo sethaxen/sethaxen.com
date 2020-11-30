@@ -9,6 +9,7 @@ html {
 
 .sidebar {
   padding: 2rem 1rem;
+  background-color: #191738;
 }
 
 .sidebar-about h1 {
@@ -22,6 +23,7 @@ html {
     margin-left: auto;
     margin-right: auto;
     width: 10rem;
+    border: 3px solid #fff;
 }
 
 @media (min-width: 768px) {
