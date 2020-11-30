@@ -1,7 +1,7 @@
 @def title = "Seth Axen"
 @def tags = ["seth axen"]
 
-## About
+## About Me
 
 I'm a research scientist, statistician, and software engineer.
 My passion is developing computational methods for faster and more reliable data analyses.
