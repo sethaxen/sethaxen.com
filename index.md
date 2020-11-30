@@ -9,7 +9,7 @@ My PhD research focused on:
 - [inferring protein structural ensembles](https://escholarship.org/uc/item/6s62d8pw)
 - [representing small molecules](https://doi.org/10.1021/acs.jmedchem.7b00696) for machine learning.
 
-I am a passionate advocate for open source software, and contribute to many open source projects, in particular in the [Julia language](https://julialang.org/), including:
+I am a passionate advocate for open source software and contribute to many open source projects, in particular in the [Julia language](https://julialang.org/), including:
 - [ArviZ.jl](https://github.com/arviz-devs/ArviZ.jl): exploratory analysis of statistical models
 - [Manifolds.jl](https://github.com/JuliaManifolds/Manifolds.jl): algorithms and statistics on manifolds
 - [ChainRules.jl](https://github.com/JuliaDiff/ChainRules.jl): generic automatic differentiation rules
