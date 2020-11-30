@@ -1,9 +1,13 @@
+html {
+  font-size: 18px;
+}
+
 .sidebar {
   padding: 2rem 1rem;
 }
 
 .sidebar-about h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-family: 'Catamaran', sans-serif;
 }
 
@@ -12,7 +16,7 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 8rem;
+    width: 10rem;
 }
 
 @media (min-width: 768px) {
@@ -21,7 +25,7 @@
     top: 0;
     left: 0;
     bottom: 0;
-    width: 11rem;
+    width: 13rem;
     text-align: left;
 }
 }
@@ -34,3 +38,7 @@
       left:   1rem;
     }
   }
+
+.franklin-content h1 { font-size: 40px; }
+.franklin-content h2 { font-size: 35px; }
+.franklin-content h3 { font-size: 30px; }
