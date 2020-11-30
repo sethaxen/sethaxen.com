@@ -26,6 +26,21 @@ html {
     border: 3px solid #fff;
 }
 
+.sidebar-social {
+    text-align: center;
+}
+
+.sidebar-social svg {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    width: 2.25rem;
+    fill: rgba(255,255,255,.7);
+}
+
+.sidebar-social svg:hover {
+    fill: #fff;
+}  
+
 @media (min-width: 768px) {
 .sidebar {
     position: fixed;
