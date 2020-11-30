@@ -59,6 +59,13 @@ html {
       top:    1rem;
       left:   1rem;
     }
+
+    .sidebar-sticky .sidebar-social {
+      position: absolute;
+      right:  0rem;
+      bottom: 0rem;
+      left:   0rem;
+    }
   }
 
 .franklin-content h1 { font-size: 40px; }
