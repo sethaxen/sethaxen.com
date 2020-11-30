@@ -1,0 +1,36 @@
+.sidebar {
+  padding: 2rem 1rem;
+}
+
+.sidebar-about h1 {
+    font-size: 2rem;
+    font-family: 'Catamaran', sans-serif;
+}
+
+.sidebar-about img {
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 8rem;
+}
+
+@media (min-width: 768px) {
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 11rem;
+    text-align: left;
+}
+}
+
+@media (min-width: 768px) {
+    .sidebar-sticky {
+      position: absolute;
+      right:  1rem;
+      top:    1rem;
+      left:   1rem;
+    }
+  }
