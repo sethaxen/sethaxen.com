@@ -16,7 +16,7 @@ I am a passionate advocate for open source software, and contribute to many open
 - [e3fp](https://github.com/keiserlab/e3fp): 3D molecular fingerprinting
 Most of my contributions are to packages written in the [Julia language](https://julialang.org/).
 
-Follow me on [GitHub](https://github.com/sethaxen), [Twitter](https://twitter.com/sethaxen), or [LinkedIn](https://www.linkedin.com/in/sethaxen).
+Follow me on [GitHub](https://github.com/sethaxen/), [Twitter](https://twitter.com/sethaxen/), or [LinkedIn](https://www.linkedin.com/in/sethaxen/).
 
 ## Education
 
@@ -29,7 +29,7 @@ Follow me on [GitHub](https://github.com/sethaxen), [Twitter](https://twitter.co
 
 ## Publications
 
-See all publications on [Google Scholar](https://scholar.google.com/citations?user=ql1INXcAAAAJ&hl=en&oi=ao).
+See all publications on [Google Scholar](https://scholar.google.com/citations?hl=en&user=ql1INXcAAAAJ&view_op=list_works&sortby=pubdate).
 
 ## Miscellany
 
