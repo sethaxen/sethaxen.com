@@ -9,6 +9,7 @@ The website_* must be defined for the RSS to work
 @def website_url   = "https://sethaxen.com"
 
 @def author = "Seth Axen"
+@def image = "https://sethaxen.com/assets/seth.jpg"
 
 @def mintoclevel = 2
 
