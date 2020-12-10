@@ -21,11 +21,18 @@ body{
     padding-right: 10%;
 }
 
+@media (min-width: 768px) {
+.content {
+    max-width: 55rem;
+    margin-left: 12rem;
+}
+}
+
 @media (min-width: 940px) {
-    .franklin-content {
-      width: 900px;
-    }
-  }
+.franklin-content {
+    width: inherit;
+}
+}
 
 .content {
     padding-top: 2rem;
