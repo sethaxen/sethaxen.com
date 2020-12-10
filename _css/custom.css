@@ -106,6 +106,20 @@ body{
 
 /* blog format */
 
+.blog-header {
+    padding-bottom: 2rem;
+}
+
+.blog-header h1 {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.blog-header .date {
+    color: var(--midgray);
+    font-size: 90%;
+}
+
 .blog-header .rss-icon {
     float: right;
   }
