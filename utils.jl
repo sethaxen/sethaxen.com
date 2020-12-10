@@ -41,3 +41,8 @@ function hfun_blogposts()
     r = Franklin.fd2html(String(take!(io)), internal=true)
     return r
 end
+
+function hfun_published_formatted()
+    return Dates.format(locvar(:published), locvar(:date_format))
+    return the_formatted_date
+end

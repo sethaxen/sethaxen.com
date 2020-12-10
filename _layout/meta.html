@@ -1,0 +1,26 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Primary Meta Tags -->
+{{isdef title}}<meta name="title" content="{{fill title}}">{{end}}
+{{isdef description}}<meta name="description" content="{{fill description}}">{{end}}
+
+<!-- Open Graph / Facebook -->
+{{ispage /blog/*}}{{ispage /blog/index}}
+<meta property="og:type" content="website">
+{{else}}
+<meta property="og:type" content="article">
+{{end}}
+{{else}}
+<meta property="og:type" content="website">
+{{end}}
+{{isdef title}}<meta property="og:title" content="{{fill title}}">{{end}}
+{{isdef description}}<meta property="og:description" content="{{fill description}}">{{end}}
+{{isdef image}}<meta property="og:image" content="{{image}}">{{end}}
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:creator" content="sethaxen">
+{{isdef title}}<meta property="twitter:title" content="{{fill title}}">{{end}}
+{{isdef description}}<meta property="twitter:description" content="{{fill description}}">{{end}}
+{{isdef image}}<meta property="twitter:image" content="{{fill image}}">{{end}}
