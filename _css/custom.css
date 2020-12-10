@@ -17,13 +17,13 @@ body{
 .franklin-content {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 1.4rem;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
-@media (min-width: 768px) {
-    .content {
-      max-width: 55rem;
-      margin-left: 15rem;
-      margin-right: 2rem;
+@media (min-width: 940px) {
+    .franklin-content {
+      width: 900px;
     }
   }
 
