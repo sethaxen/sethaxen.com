@@ -22,14 +22,15 @@ function hfun_blogposts()
                 surl = strip(url, '/')
                 title = pagevar(surl, :title)
                 pubdate = pagevar(surl, :published)
+                description = pagevar(surl, :description)
                 if isnothing(pubdate)
                     date    = "$ys-$ms-01"
                     days[i] = 1
                 else
-                    date    = Date(pubdate, dateformat"yyyy/mm/dd")
+                    date    = pubdate
                     days[i] = day(date)
                 end
-                lines[i] = "\n[$title]($url) $date \n"
+                lines[i] = "\n$date: [**$title**]($url)\n"
             end
             # sort by day
             foreach(line -> write(io, line), lines[sortperm(days, rev=true)])
