@@ -6,7 +6,7 @@ The website_* must be defined for the RSS to work
 @def generate_rss = true
 @def website_title = "Seth Axen"
 @def website_descr = "Seth Axen"
-@def website_url   = "https://sethaxen.github.io"
+@def website_url   = "https://sethaxen.com"
 
 @def author = "Seth Axen"
 
