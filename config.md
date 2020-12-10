@@ -26,4 +26,14 @@ For instance:
 * \newcommand{\phrase}{This is a long phrase to copy.}
 -->
 \newcommand{\R}{\mathbb R}
-\newcommand{\scal}[1]{\langle #1 \rangle}
+\newcommand{\C}{\mathbb C}
+
+<!-- 
+Useful commands inspired by the physics package
+ -->
+\newcommand{\ip}[2]{\langle #1, #2 \rangle}
+\newcommand{\Re}{\operatorname{Re}}
+\newcommand{\Im}{\operatorname{Im}}
+\newcommand{\sign}{\operatorname{sign}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
