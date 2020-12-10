@@ -109,3 +109,20 @@ html {
 .blog-header .rss-icon svg:hover {
     fill: #000;
 }
+
+/* code format */
+
+@font-face {
+    font-family: JuliaMono-Regular;
+    src: url("https://cdn.jsdelivr.net/gh/cormullion/juliamono/webfonts/JuliaMono-Regular.woff2");
+}
+
+code {
+    margin: 1rem;
+}
+
+.hljs {
+    font-family: "JuliaMono";
+    font-variant-ligatures: no-contextual;
+    font-feature-settings: "zero", "ss02";
+}
