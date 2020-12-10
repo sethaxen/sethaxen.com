@@ -1,5 +1,17 @@
+:root {
+    --offwhite: #fdfdfd;
+    --midgray: #898989;
+    --sidebarcolor: #191738;
+    --offblack: #323232;
+}
+
 html {
   font-size: 15px;
+}
+
+body{
+    background-color: var(--offwhite);
+    color: var(--offblack);
 }
 
 .franklin-content {
@@ -22,7 +34,7 @@ html {
 
 .sidebar {
   padding: 2rem 1rem;
-  background-color: #191738;
+  background-color: var(--sidebarcolor);
   font-size: 1.4rem;
 }
 
@@ -37,7 +49,7 @@ html {
     margin-left: auto;
     margin-right: auto;
     width: 10rem;
-    border: 3px solid #fff;
+    border: 3px solid var(--offwhite);
 }
 
 .sidebar-social {
@@ -48,11 +60,11 @@ html {
     padding-left: 0.25rem;
     padding-right: 0.25rem;
     width: 2.7rem;
-    fill: rgba(255, 255, 255, 0.5);
+    fill: var(--midgray);
 }
 
 .sidebar-social svg:hover {
-    fill: #fff;
+    fill: var(--offwhite);
 }  
 
 @media (min-width: 768px) {
@@ -95,17 +107,16 @@ html {
 /* blog format */
 
 .blog-header .rss-icon {
-    /* color: #e2802f; */
     float: right;
   }
 
 .blog-header .rss-icon svg {
-    width: 40px;
-    fill: rgba(0, 0, 0, 0.5);
+    width: 35px;
+    fill: var(--midgray);
 }
 
 .blog-header .rss-icon svg:hover {
-    fill: #000;
+    fill: var(--offblack);
 }
 
 /* code format */
