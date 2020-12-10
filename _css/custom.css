@@ -1,5 +1,12 @@
 html {
-  font-size: 18px;
+  font-size: 15px;
+}
+
+.franklin-content {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    letter-spacing: .03em;
+    font-size: 1.4rem;
+    line-height: 2rem;
 }
 
 .content {
@@ -10,6 +17,7 @@ html {
 .sidebar {
   padding: 2rem 1rem;
   background-color: #191738;
+  font-size: 1.4rem;
 }
 
 .sidebar-about h1 {
@@ -68,6 +76,9 @@ html {
     }
   }
 
-.franklin-content h1 { font-size: 40px; }
-.franklin-content h2 { font-size: 35px; }
-.franklin-content h3 { font-size: 30px; }
+.franklin-content h1, h2, h3 {
+    font-family: "PT Sans", Helvetica, Arial, sans-serif;
+}
+.franklin-content h1 { font-size: 2.4rem; }
+.franklin-content h2 { font-size: 2.1rem; }
+.franklin-content h3 { font-size: 1.8rem; }
