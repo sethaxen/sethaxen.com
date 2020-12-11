@@ -33,7 +33,7 @@ For instance:
 <!-- 
 Useful commands inspired by the physics package
  -->
-\newcommand{\ip}[2]{\langle #1, #2 \rangle}
+\newcommand{\ip}[2]{\left\langle #1, #2 \right\rangle}
 \newcommand{\Re}{\operatorname{Re}}
 \newcommand{\Im}{\operatorname{Im}}
 \newcommand{\sign}{\operatorname{sign}}
