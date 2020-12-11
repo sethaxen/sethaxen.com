@@ -36,6 +36,7 @@ function hfun_blogposts()
             foreach(line -> write(io, line), lines[sortperm(days, rev=true)])
         end
     end
+    iszero(io.size) && write(io, "_Coming soon_.")
     # markdown conversion adds `<p>` beginning and end but
     # we want to  avoid this to avoid an empty separator
     r = Franklin.fd2html(String(take!(io)), internal=true)

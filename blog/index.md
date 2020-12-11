@@ -1,6 +1,8 @@
 @def title = "Blog"
 @def tags = ["blog"]
 
-Random writings that I didn't feel like turning into papers.
+Random thoughts on math, statistics, and code that I haven't felt like turning into papers.
+
+### Posts
 
 {{blogposts}}
