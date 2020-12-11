@@ -1,3 +1,7 @@
+{{ispage /blog/*}}{{isnotpage /blog/index}}
+{{insert blog_foot.html }}
+{{end}}{{end}}
+
 <div class="page-foot">
   <div class="copyright">
     &copy; {{ fill author }}. {{isnotpage /tag/*}}Last modified: {{ fill fd_mtime }}.{{end}} Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a>.

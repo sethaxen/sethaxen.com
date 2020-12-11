@@ -140,6 +140,11 @@ body{
     fill: var(--offblack);
 }
 
+.blog-foot {
+    font-size: 80%;
+    text-align: center;
+}
+
 /* code format */
 
 @font-face {
