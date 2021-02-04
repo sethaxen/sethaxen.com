@@ -6,7 +6,7 @@ Plug in the list of blog posts contained in the `/blog/` folder.
 function hfun_blogposts()
     curyear = year(Dates.today())
     io = IOBuffer()
-    for year in curyear:-1:2020
+    for year in curyear:-1:2021
         ys = "$year"
         year < curyear && write(io, "\n**$year**\n")
         for month in 12:-1:1
