@@ -39,3 +39,18 @@ Useful commands inspired by the physics package
 \newcommand{\sign}{\operatorname{sign}}
 \newcommand{\diag}{\operatorname{diag}}
 \newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\dd}{\mathrm{d}}
+
+\newcommand{\details}[1]{
+    ~~~<details>~~~
+    #1
+    ~~~</details>~~~
+}
+\newcommand{\summary}[1]{
+    ~~~
+    <summary>~~~
+    #1
+    ~~~</summary>
+    ~~~
+}
