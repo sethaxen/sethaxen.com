@@ -7,7 +7,7 @@ The website_* must be defined for the RSS to work
 @def website_title = "Seth Axen"
 @def website_descr = "Seth Axen"
 @def website_url   = "https://sethaxen.com"
-@def repo_url = "https://github.com/sethaxen/sethaxen.github.io"
+@def repo_url = "https://github.com/sethaxen/sethaxen.com"
 
 @def author = "Seth Axen"
 @def image = "https://sethaxen.com/assets/seth.jpg"
