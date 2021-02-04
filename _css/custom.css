@@ -18,14 +18,19 @@ body{
 .franklin-content {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 1.4rem;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
+    overflow: auto;
 }
 
 @media (min-width: 768px) {
 .content {
     max-width: 60rem;
     margin-left: 10rem;
+}
+.franklin-content {
+    padding-left: 10%;
+    padding-right: 10%;
 }
 }
 
