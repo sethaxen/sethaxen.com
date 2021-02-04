@@ -200,7 +200,7 @@ $$\begin{aligned}
 \end{aligned}$$
 which like $\dot{H}$ we organize into the block matrix $\overline{H} = \begin{bmatrix} \overline{H}_1 & \overline{H}_2 \end{bmatrix}$.
 This block structure lets us rewrite the above identity in terms of $\overline{H}$ and $\dot{H}$:
-$$\Re\ip{\overline{H}_2}{\dot{H}_2} + \Re\ip{\overline{H}_2}{\dot{H}_2} = \Re\ip{\overline{H}}{\dot{H}}$$
+$$\Re\ip{\overline{H}_1}{\dot{H}_1} + \Re\ip{\overline{H}_2}{\dot{H}_2} = \Re\ip{\overline{H}}{\dot{H}}$$
 
 Now we plug in $\dot{H}$
 $$\Re\ip{\overline{H}}{\dot{H}} = \Re\ip{\overline{H}}{L^{-1} P \dot{A}} = \Re\ip{P^\mathrm{T} L^{-\mathrm{H}} \overline{H}}{\dot{A}}$$
