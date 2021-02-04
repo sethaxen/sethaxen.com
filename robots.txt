@@ -1,0 +1,4 @@
+Sitemap: https://sethaxen.com/sitemap.xml
+
+User-agent: *
+Disallow:
