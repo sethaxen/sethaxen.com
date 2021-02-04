@@ -3,6 +3,7 @@
     --midgray: #898989;
     --sidebarcolor: #191738;
     --offblack: #323232;
+    --detailscolor: #eeeeff;
 }
 
 html {
@@ -23,8 +24,8 @@ body{
 
 @media (min-width: 768px) {
 .content {
-    max-width: 55rem;
-    margin-left: 12rem;
+    max-width: 60rem;
+    margin-left: 10rem;
 }
 }
 
@@ -145,6 +146,19 @@ body{
     text-align: center;
 }
 
+details{
+    background-color: var(--detailscolor);
+    border-radius: 1rem;
+    padding: 0.5rem;
+    overflow: auto;
+}
+
+/* disable equation numbering in details boxes */
+details .katex-display::after {
+    counter-increment: none;
+    content: none;
+}
+
 /* code format */
 
 @font-face {
@@ -152,7 +166,7 @@ body{
     src: url("https://cdn.jsdelivr.net/gh/cormullion/juliamono/webfonts/JuliaMono-Regular.woff2");
 }
 
-code {
+pre > code {
     margin: 1rem;
 }
 
