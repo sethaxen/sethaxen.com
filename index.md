@@ -3,13 +3,9 @@
 
 ## About Me
 
-I'm a research scientist, probabilistic programmer, and software engineer.
-My main focus is developing and implementing computational approaches for faster and more reliable data analyses.
-My PhD research focused on:
-- [inferring protein structural ensembles](https://escholarship.org/uc/item/6s62d8pw)
-- [representing small molecules](https://doi.org/10.1021/acs.jmedchem.7b00696) for machine learning.
+I'm a scientist, probabilistic programmer, and research software engineer.
 
-I am a passionate advocate for open source software and contribute to many open source projects, especially in the [Julia language](https://julialang.org/), including:
+I passionately advocate for open source software and contribute to many open source projects, especially in the [Julia language](https://julialang.org/), including:
 - [ArviZ.jl](https://github.com/arviz-devs/ArviZ.jl): exploratory analysis of statistical models
 - [Manifolds.jl](https://github.com/JuliaManifolds/Manifolds.jl): algorithms and statistics on manifolds
 - [ChainRules.jl](https://github.com/JuliaDiff/ChainRules.jl): generic automatic differentiation rules
@@ -19,12 +15,14 @@ Follow me on [GitHub](https://github.com/sethaxen/), [Twitter](https://twitter.c
 
 ## Education
 
-- PhD in Biological and Medical Informatics, UCSF (2020)
-- BS in Biochemistry, UCLA (2008) 
+- PhD in Biological and Medical Informatics, [UCSF](https://www.ucsf.edu/) (2020)
+- BS in Biochemistry, [UCLA](https://www.ucla.edu/) (2008) 
 
 ## Work Experience
 
-- Systems Analyst, DOE Joint Genome Institute (2009-2014)
+- Machine Learning Research Engineer, [ML ⇌ Science Colaboratory](https://mlcolab.org/), [University of Tübingen](https://uni-tuebingen.de/) (2021-present)
+- Postdoctoral Researcher, [UCSF](https://www.ucsf.edu/) (2020-2021)
+- Systems Analyst, [DOE Joint Genome Institute](https://jgi.doe.gov/) (2009-2014)
 
 ## Publications
 
