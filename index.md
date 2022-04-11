@@ -6,7 +6,7 @@
 I'm a scientist, probabilistic programmer, and research software engineer.
 
 I passionately advocate for open source software and contribute to many open source projects, especially in the [Julia language](https://julialang.org/), including:
-- [ArviZ](https://arviz.org): exploratory analysis of statistical models
+- [ArviZ](https://www.arviz.org): exploratory analysis of statistical models
 - [Manifolds.jl](https://github.com/JuliaManifolds/Manifolds.jl): algorithms and statistics on manifolds
 - [ChainRules.jl](https://github.com/JuliaDiff/ChainRules.jl): generic automatic differentiation rules
 - [e3fp](https://github.com/keiserlab/e3fp): 3D molecular fingerprinting
