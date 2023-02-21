@@ -11,7 +11,7 @@ I passionately advocate for open source software and contribute to many open sou
 - [ChainRules.jl](https://github.com/JuliaDiff/ChainRules.jl): generic automatic differentiation rules
 - [e3fp](https://github.com/keiserlab/e3fp): 3D molecular fingerprinting
 
-Follow me on [GitHub](https://github.com/sethaxen/), [Twitter](https://twitter.com/sethaxen/), or [LinkedIn](https://www.linkedin.com/in/sethaxen/).
+Follow me on [GitHub](https://github.com/sethaxen/) or [Mastodon](https://bayes.club/@sethaxen).
 
 ## Education
 
