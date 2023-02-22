@@ -27,8 +27,9 @@ pages. It can be math commands but does not need to be.
 For instance:
 * \newcommand{\phrase}{This is a long phrase to copy.}
 -->
-\newcommand{\R}{\mathbb R}
-\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\H}{\mathbb{H}}
 
 <!-- 
 Useful commands inspired by the physics package

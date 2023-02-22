@@ -4,6 +4,7 @@
     --sidebarcolor: #191738;
     --offblack: #323232;
     --detailscolor: #eeeeff;
+    --importantcolor: #fbe3e3;
 }
 
 html {
@@ -179,4 +180,12 @@ pre > code {
     font-family: "JuliaMono";
     font-variant-ligatures: no-contextual;
     font-feature-settings: "zero", "ss02";
+}
+
+.important {
+    background-color: var(--importantcolor);
+    border-radius: 1rem;
+    padding: 0.5rem;
+    margin: 1em;
+    overflow: auto;
 }
