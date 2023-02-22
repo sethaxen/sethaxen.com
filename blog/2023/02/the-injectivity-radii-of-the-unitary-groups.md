@@ -181,17 +181,22 @@ $$
 $$
 @@
 
-<!-- It's always a good idea to numerically check that the results make sense.
+It's always a good idea to numerically check that the results make sense.
 For the 2D and 3D rotations $\mathrm{SO}(2)$ and $\mathrm{SO}(3)$, respectively, we then have
-$$\operatorname{inj}^-_{\mathrm{SO}(2)} = \operatorname{inj}^+_{\mathrm{SO}(2)} = \pi\sqrt{2}$$
-$$\operatorname{inj}^-_{\mathrm{SO}(3)} = \operatorname{inj}^+_{\mathrm{SO}(3)} = \pi\sqrt{2}$$
+$$
+\begin{aligned}
+\operatorname{inj}^-_{\mathrm{SO}(2)} = \operatorname{inj}^+_{\mathrm{SO}(2)} = \pi\sqrt{2}\\
+\operatorname{inj}^-_{\mathrm{SO}(3)} = \operatorname{inj}^+_{\mathrm{SO}(3)} = \pi\sqrt{2}
+\end{aligned}
+$$
+These injectivity radii correspond to a rotation of 180°. [^3]
 Coming back to our motivating example, if we start from any pose and rotate an object more than 180° in any direction, we can no longer uniquely determine the initial rotational velocity.
 
-$\mathrm{U}(1, \C)$, the points on the complex unit circle, is isomorphic to ${\mathrm{SO}(2)}$, so it may seem like a contradiction that its injectivity radius is $\pi$.
-But this difference is caused by the choice of metric, which causes the inner product on ${\mathrm{SO}(2)}$ to be scaled by $\frac{1}{2}$ compared to $\mathrm{U}(1, \C)$.
+$\mathrm{U}(1, \C)$, the complex unit circle, is isomorphic to ${\mathrm{SO}(2)}$, so it may seem like a contradiction that its injectivity radius is $\pi$.
+But this difference is again caused by the choice of metric, which causes the inner product on ${\mathrm{SO}(2)}$ to be scaled by $\frac{1}{2}$ compared to $\mathrm{U}(1, \C)$.[^3]
 
-Analogously, $\mathrm{U}(1, \H)$ represents the unit quaternions, which are an alternative way to represent 3D rotations, and is isomorphic to $\mathrm{SU}(2, \C)$.
-The injectivity radii only differ by the factor of 2 due to the choice of metric. -->
+Analogously, $\mathrm{U}(1, \H)$ represents the unit quaternions (also the compact symplectic group), which are an alternative way to represent 3D rotations, and is equivalent to $\mathrm{SU}(2)$.
+The injectivity radii again only differ by the factor of $\sqrt{2}$ due to the scaling convention of the metric.
 
 ## Conclusion
 
