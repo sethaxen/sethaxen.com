@@ -39,23 +39,4 @@
   </atom:author>
         
 </item>
-
-<item>
-  <title>
-    <![CDATA[  Differentiating the LU decomposition  ]]>
-  </title>
-  <link> https://sethaxen.com/blog/2021/02/differentiating-the-lu-decomposition/index.html </link>
-  <guid> https://sethaxen.com/blog/2021/02/differentiating-the-lu-decomposition/index.html </guid>
-  <description>
-    <![CDATA[  Deriving differentiation rules for the LU decomposition of square and non-square matrices.  ]]>
-  </description>  
-    
-  <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>  
-  
-  
-  <atom:author>
-    <atom:name>Seth Axen</atom:name>
-  </atom:author>
-        
-</item>
 </channel></rss>
