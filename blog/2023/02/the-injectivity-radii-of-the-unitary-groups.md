@@ -20,9 +20,9 @@ If I know the starting pose of the object and the amount of time that has passed
 There's really just one condition: that the rotational distance (i.e. angle) between the initial and final positions does not exceed some maximum value.
 For example, if you rotate 180° in any direction, it's impossible for me to know whether you rotated the object clockwise or counterclockwise.
 Worse, if you rotate a full 360°, I couldn't know whether you didn't move the object at all or performed a whole rotation or a million rotations.
-This maximum distance between the initial and final position is called the _injectivity radius_[^1].
+This maximum allowed distance that allows one to still infer the initial and final orientation is called the _injectivity radius_[^1].
 
-The question motivating this post is, what is the injectivity radius for the rotations in not just 2 and 3 but any dimension?
+The question motivating this post is, what is the injectivity radius for the rotations in not just 2 dimensions and 3 dimensions but any dimension?
 And more generally, what is it for the [unitary group](https://en.wikipedia.org/wiki/Unitary_group) and its most common subgroups?
 Since these groups are featured in many (all?) of the introductory texts on Lie groups and manifolds, and since the injectivity radius is a basic property introduced in differential geometry textbooks, I was surprised that I could not find a single reference giving these radii for these groups.
 
@@ -60,7 +60,7 @@ We will focus on the real and complex fields, but the unitary quaternionic case 
 
 ## Relevant geometric properties
 
-The unitary group is a compact group and when equipped with the Euclidean inner product $g\colon (X, Y) \mapsto \ip{X}{Y}$ becomes a Riemannian manifold.
+The unitary group is a compact group and when equipped with the [Frobenius inner product](https://en.wikipedia.org/wiki/Frobenius_inner_product) $g\colon (X, Y) \mapsto \ip{X}{Y}_\mathrm{F}$ becomes a Riemannian manifold.[^3]
 The Riemannian exponential $\exp_p$ and logarithm $\log_p$ are related to the Lie group exponential $\operatorname{Exp}$ and logarithm $\operatorname{Log}$, which for these matrix groups are just the matrix exponential and logarithm.
 
 $$
@@ -74,7 +74,7 @@ $$
     Thus, to find the injectivity radius at any point $p$, we only need to work out when the matrix exponential is inverted by the principal matrix logarithm.
 @@
 
-In the following then, $p$ is always the identity matrix, and $X$ is always an element of the Lie algebra, that is, the tangent space at the identity matrix.
+In the following then, $p$ is always the identity matrix and will not be mentioned, while $X$ is always an element of the Lie algebra, that is, the tangent space at the identity matrix.
 
 The orthogonal group $\mathrm{O}(n)$ is comprised of two submanifolds, $\mathrm{SO}(n)$, whose elements have determinant +1, and another subgroup whose elements have determinant -1.
 These submanifolds are disconnected, so that the geodesic cannot join two points from the different submanifolds.
@@ -85,9 +85,9 @@ These submanifolds are disconnected, so that the geodesic cannot join two points
 ## Relevant linear algebraic properties
 
 All unitary matrices have a unit determinant $|\det(q)| = 1$.
-The inverse of any unitary matrix is just its adjoint $q^{-1} = q^\mathrm{H}$
+The inverse of any unitary matrix $q$ is just its adjoint $q^{-1} = q^\mathrm{H}$
 
-The logarithm of any unitary matrix is a skew-hermitian matrix $X = -X^\mathrm{H}$.[^3]
+The logarithm of any unitary matrix is a skew-hermitian matrix $X = -X^\mathrm{H}$.[^4]
 Unitary and skew-hermitian matrices are normal matrices, which means they are always diagonalizable with unitary eigenvectors.
 Let $q=VSV^\mathrm{H}$ be the eigendecomposition of $q$ and $X = U \Lambda U^\mathrm{H}$ be the eigendecomposition of $X$.
 
@@ -103,14 +103,14 @@ U \Lambda U^\mathrm{H} &= -U \Lambda^\mathrm{H} U^\mathrm{H}\\
 \end{aligned}.
 $$
 @@important
-    The eigenvalues of the unitary matrices are points on $\mathrm{U}(1, \mathbb{F})$, and the eigenvalues of the skew-Hermitian matrices are pure imaginary numbers $\lambda = \mathrm{i}\theta$.[^4]
+    The eigenvalues of the unitary matrices are points on $\mathrm{U}(1, \mathbb{F})$, and the eigenvalues of the skew-Hermitian matrices are pure imaginary numbers $\lambda = \mathrm{i}\theta$.[^5]
 @@
 
-The norm of $X$ under the Euclidean metric is
+The norm of $X$ under the Frobenius metric is
 $$
 \begin{aligned}
-\norm{X}_g &= \norm{X} = \sqrt{\ip{U \Lambda U^\mathrm{H}}{U \Lambda U^\mathrm{H}}} \\
-           &= \norm{\lambda} = \sqrt{\sum_{i=1}^n |\lambda_i|^2} = \sqrt{\sum_{i=1}^n \theta_i^2}\\
+\norm{X}_g &= \norm{X}_\mathrm{F} = \sqrt{\ip{U \Lambda U^\mathrm{H}}{U \Lambda U^\mathrm{H}}_\mathrm{F}} \\
+           &= \norm{\lambda}_\mathrm{F} = \sqrt{\sum_{i=1}^n |\lambda_i|^2} = \sqrt{\sum_{i=1}^n \theta_i^2}\\
            &= \norm{\theta}
 \end{aligned}.
 $$
@@ -201,6 +201,7 @@ I hope it was enjoyable!
 ###
 
 [^1]: The injectivity radius is so called because it is the radius of a geodesic ball within which the exponential map is injective (one-to-one).
-[^2]: It's _really_ hard to write anything about manifolds or groups without writing a whole introductory text to differential geometry.
-[^3]: This comes from differentiating the constraint $q^\mathrm{H}q=I_n$. Then we have $\dd{(q^\mathrm{H}q)} = (\dd{q})^\mathrm{H}q + q^\mathrm{H} \dd{q} = \dd(I_n) = 0$. Letting $X = \dd{q}$, then $X^\mathrm{H}q = -q^\mathrm{H} X = -(X^\mathrm{H}q)^\mathrm{H}$. When $q$ is the identity matrix, $X = -X^\mathrm{H}$.
-[^4]: For the complex unitary group, $\mathrm{i}$ is the usual imaginary number, while for quaternions, it would be a pure unit quaternion.
+[^2]: It's _really_ hard to write anything about manifolds or groups without writing a whole introductory text to differential geometry or group theory.
+[^3]: Because of the skew-hermitian nature of the elements of the Lie algebra, some texts use the scaled Frobenius metric $g(X, Y) = \frac{1}{2}\ip{X}{Y}_\mathrm{F}$. In some cases, this allows the norm of a tangent vector to be interpreted as the angle of the rotation. To get the injectivity radii for this metric, one would just divide ours by $\sqrt{2}$.
+[^4]: This comes from differentiating the constraint $q^\mathrm{H}q=I_n$. Then we have $\dd{(q^\mathrm{H}q)} = (\dd{q})^\mathrm{H}q + q^\mathrm{H} \dd{q} = \dd(I_n) = 0$. Letting $X = \dd{q}$, then $X^\mathrm{H}q = -q^\mathrm{H} X = -(X^\mathrm{H}q)^\mathrm{H}$. When $q$ is the identity matrix, $X = -X^\mathrm{H}$.
+[^5]: For the complex unitary group, $\mathrm{i}$ is the usual imaginary number, while for quaternions, it would be a pure unit quaternion.
