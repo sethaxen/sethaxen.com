@@ -12,6 +12,12 @@ The website_* must be defined for the RSS to work
 @def author = "Seth Axen"
 @def image = "https://sethaxen.com/assets/seth.jpg"
 
+@def generate_rss = true
+@def rss_website_title = "Seth Axen's blog"
+@def rss_website_descr = "Random thoughts on math, statistics, and code that I haven't felt like turning into papers."
+@def rss_website_url   = "https://sethaxen.com/blog"
+@def rss_full_content = true
+
 @def mintoclevel = 2
 
 <!--
