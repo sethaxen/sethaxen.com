@@ -9,14 +9,14 @@
 
   <channel>
     <title>
-      <![CDATA[  Seth Axen  ]]>
+      <![CDATA[  Seth Axen&#39;s blog  ]]>
     </title>
-    <link> https://sethaxen.com </link>
+    <link> https://sethaxen.com/blog </link>
     <description>
-      <![CDATA[  Seth Axen  ]]>
+      <![CDATA[  Random thoughts on math, statistics, and code that I haven&#39;t felt like turning into papers.  ]]>
     </description>
     <atom:link
-      href="https://sethaxen.com/feed.xml"
+      href="https://sethaxen.com/blog/feed.xml"
       rel="self"
       type="application/rss+xml" />
 
@@ -25,11 +25,155 @@
   <title>
     <![CDATA[  The injectivity radii of the unitary groups  ]]>
   </title>
-  <link> https://sethaxen.com/blog/2023/02/the-injectivity-radii-of-the-unitary-groups/index.html </link>
-  <guid> https://sethaxen.com/blog/2023/02/the-injectivity-radii-of-the-unitary-groups/index.html </guid>
+  <link> https://sethaxen.com/blog/blog/2023/02/the-injectivity-radii-of-the-unitary-groups/index.html </link>
+  <guid> https://sethaxen.com/blog/blog/2023/02/the-injectivity-radii-of-the-unitary-groups/index.html </guid>
   <description>
     <![CDATA[  Working out the injectivity radius for the unitary, orthogonal, special unitary, and special orthogonal groups.  ]]>
   </description>  
+  
+  <content:encoded>
+    <![CDATA[  
+<div class="franklin-toc"><ol><li>Introduction</li><li>The injectivity radius</li><li>The unitary group&#40;s&#41;</li><li>Relevant geometric properties</li><li>Relevant linear algebraic properties</li><li>The injectivity radii</li><li>Conclusion</li></ol></div>
+<h2 id="introduction">Introduction</h2>
+<p>Suppose you held up an object and began rotating it at a fixed speed. After some amount of time, you stop rotating it. If I know the starting pose of the object and the amount of time that has passed, under what conditions can I also tell you the rotational velocity &#40;both direction and speed&#41; of the spinning object?</p>
+<p>There&#39;s really just one condition: that the rotational distance &#40;i.e. angle&#41; between the initial and final positions does not exceed some maximum value. For example, if you rotate 180° in any direction, it&#39;s impossible for me to know whether you rotated the object clockwise or counterclockwise. Worse, if you rotate a full 360°, I couldn&#39;t know whether you didn&#39;t move the object at all or performed a whole rotation or a million rotations. This maximum allowed distance that allows one to still infer the initial and final orientation is called the <em>injectivity radius</em><sup id="fnref:1">[1]</sup>.</p>
+<p>The question motivating this post is, what is the injectivity radius for the rotations in not just 2 dimensions and 3 dimensions but any dimension? And more generally, what is it for the <a href="https://en.wikipedia.org/wiki/Unitary_group">unitary group</a> and its most common subgroups? Since these groups are featured in many &#40;all?&#41; of the introductory texts on Lie groups and manifolds, and since the injectivity radius is a basic property introduced in differential geometry textbooks, I was surprised that I could not find a single reference giving these radii for these groups.</p>
+<p>In this post I&#39;ll work out these radii. Marvelously, we don&#39;t need any differential geometry or group theory to do this, just linear algebra&#33; Nevertheless, this post assumes familiarity with these topics and for the sake of space will try not define all common terms or notation.<sup id="fnref:2">[2]</sup></p>
+<h2 id="the_injectivity_radius">The injectivity radius</h2>
+<p>Consider a point \(p\) on some manifold \(\mathcal{M}\) with tangent vectors \(X,Y \in T_p \mathcal{M}\). Assume a Riemannian metric \(g_p\) defining an inner product \(g_p\colon (X, Y) \mapsto \left\langle  X,  Y \right\rangle_g\), which induces a norm \(\left\lVert  X \right\rVert_g\).</p>
+<p>Let&#39;s denote the exponential map \(\exp_p\colon X \mapsto q\) for \(q \in \mathcal{M}\) and the logarithmic map \(\log_p\colon q \mapsto Y\). The injectivity radius at \(p\) is defined as the norm of the smallest \(X\) for which \(X \ne Y = \log_p (\exp_p X)\), or in other words, the smallest \(X\) for which the logarithmic map no longer is the inverse of the exponential map. We further define the global injectivity radius of \(\mathcal{M}\) as the infimum of the injectivity radii at all points on the manifold.</p>
+<p>Notationally, we define this global injectivity radius as</p>
+\[\operatorname{inj}^-_{\mathcal{M}} = \inf_{(p, X) \in T \mathcal{M}}\{\left\lVert  X \right\rVert_g | \log_p(\exp_p(X)) \ne X\}.\]
+<p>We&#39;ll also consider the related supremum</p>
+\[\operatorname{inj}^+_{\mathcal{M}} = \sup_{(p, X) \in T \mathcal{M}}\{\left\lVert  X \right\rVert_g | \log_p(\exp_p(X)) = X\}.\]
+<p>These two quantities form the lower and upper bound radii, respectively, of two geodesic balls within which the exponential map is invertible.</p>
+<h2 id="the_unitary_groups">The unitary group&#40;s&#41;</h2>
+<p>The Unitary group \(\mathrm{U}(n, \mathbb{F})\) over some number system \(\mathbb{F}\) is the group of all \(n \times n\) matrices \(p \in \mathbb{F}^{n \times n}\) for which \(p^\mathrm{H} p = I_n\), where \({\cdot}^\mathrm{H}\) denotes the matrix adjoint. \(\mathbb{F}\) could be the real numbers \(\mathbb{R}\), complex numbers \(\mathbb{C}\), or quaternions \(\mathbb{H}\).</p>
+<p>We will also deal with the following subgroups:</p>
+<ul>
+<li><p>\(\mathrm{SU}(n)\): the special unitary group, which consists of complex unitary matrices whose determinant is &#43;1</p>
+</li>
+<li><p>\(\mathrm{O}(n) \equiv \mathrm{U}(n, \mathbb{R})\): the orthogonal group, i.e. the group of rotations and reflections</p>
+</li>
+<li><p>\(\mathrm{SO}(n)\): the special orthogonal group, i.e. the group of real rotations</p>
+</li>
+</ul>
+<p>We will focus on the real and complex fields, but the unitary quaternionic case immediately follows from the complex one.</p>
+<h2 id="relevant_geometric_properties">Relevant geometric properties</h2>
+<p>The unitary group is a compact group and when equipped with the <a href="https://en.wikipedia.org/wiki/Frobenius_inner_product">Frobenius inner product</a> \(g\colon (X, Y) \mapsto \left\langle  X,  Y \right\rangle_\mathrm{F}\) becomes a Riemannian manifold.<sup id="fnref:3">[3]</sup> The Riemannian exponential \(\exp_p\) and logarithm \(\log_p\) are related to the Lie group exponential \(\operatorname{Exp}\) and logarithm \(\operatorname{Log}\), which for these matrix groups are just the matrix exponential and logarithm.</p>
+\[
+\begin{aligned}
+\exp_p(X) &= p\operatorname{Exp}_p(p^{\mathrm{H}}X)\\
+\log_p(q) &= p\operatorname{Log}_p(p^{\mathrm{H}}q)
+\end{aligned}
+\]
+<div class="important">Thus, to find the injectivity radius at any point \(p\), we only need to work out when the matrix exponential is inverted by the principal matrix logarithm.</div>
+<p>In the following then, \(p\) is always the identity matrix and will not be mentioned, while \(X\) is always an element of the Lie algebra, that is, the tangent space at the identity matrix.</p>
+<p>The orthogonal group \(\mathrm{O}(n)\) is comprised of two submanifolds, \(\mathrm{SO}(n)\), whose elements have determinant &#43;1, and another subgroup whose elements have determinant -1. These submanifolds are disconnected, so that the geodesic cannot join two points from the different submanifolds.</p>
+<div class="important">The injectivity radius of \(\mathrm{O}(n)\) is the same as that of \(\mathrm{SO}(n)\).</div>
+<h2 id="relevant_linear_algebraic_properties">Relevant linear algebraic properties</h2>
+<p>All unitary matrices have a unit determinant \(|\det(q)| = 1\). The inverse of any unitary matrix \(q\) is just its adjoint \(q^{-1} = q^\mathrm{H}\)</p>
+<p>The logarithm of any unitary matrix is a skew-hermitian matrix \(X = -X^\mathrm{H}\).<sup id="fnref:4">[4]</sup> Unitary and skew-hermitian matrices are normal matrices, which means they are always diagonalizable with unitary eigenvectors. Let \(q=VSV^\mathrm{H}\) be the eigendecomposition of \(q\) and \(X = U \Lambda U^\mathrm{H}\) be the eigendecomposition of \(X\).</p>
+<p>The unitary/skew-Hermitian condition then implies</p>
+\[
+\begin{aligned}
+X &= -X^\mathrm{H}\\
+U \Lambda U^\mathrm{H} &= -U \Lambda^\mathrm{H} U^\mathrm{H}\\
+\Lambda &= -\Lambda^\mathrm{H}\\
+\operatorname{diag}(\Lambda) = \lambda &= -\lambda^*\\
+\lambda + \lambda^* = 2\operatorname{Re}(\lambda) &= 0\\
+\lambda_i &= \mathrm{i} \theta_i, \quad \theta_i \in \mathbb{R}, i \in 1\ldots n
+\end{aligned}.
+\]
+<div class="important">The eigenvalues of the unitary matrices are points on \(\mathrm{U}(1, \mathbb{F})\), and the eigenvalues of the skew-Hermitian matrices are pure imaginary numbers \(\lambda = \mathrm{i}\theta\).<sup id="fnref:5">[5]</sup></div>
+<p>The norm of \(X\) under the Frobenius metric is</p>
+\[
+\begin{aligned}
+\left\lVert  X \right\rVert_g &= \left\lVert  X \right\rVert_\mathrm{F} = \sqrt{\left\langle  U \Lambda U^\mathrm{H},  U \Lambda U^\mathrm{H} \right\rangle_\mathrm{F}} \\
+           &= \left\lVert  \lambda \right\rVert_\mathrm{F} = \sqrt{\sum_{i=1}^n |\lambda_i|^2} = \sqrt{\sum_{i=1}^n \theta_i^2}\\
+           &= \left\lVert  \theta \right\rVert
+\end{aligned}.
+\]
+<p>The special unitary group has the additional constraint that the determinant is &#43;1. This constraint implies that \(\sum_{i=1}^n \theta_i = 0\). Given \(n-1\) values of \(\theta_i\), the \(n\)th value is thus fixed. </p>
+<p>Special orthogonal matrices are real, and real matrices have the extra property that if they have a complex eigenvalue \(\lambda_i\) then they also have a complex eigenvalue \(\lambda_i^*\), i.e. <a href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors#Eigenvalues_and_the_characteristic_polynomial">the complex eigenvalues come in conjugate pairs</a>. The sum of the elements in each pair is thus 0, and they don&#39;t contribute to the the sum \(\sum_{i=1}^n \theta_i\). When \(n\) is odd, at least one eigenvalue is 0.</p>
+<p>Using the eigendecomposition, the matrix exponential and logarithm can be computed by applying the corresponding function to the eigenvalues. Then</p>
+\[
+\begin{aligned}
+\operatorname{Exp}(X) &= U \operatorname{Exp}(\Lambda) U^\mathrm{H}\\
+\operatorname{Log}(q) &= V \operatorname{Log}(S) V^\mathrm{H}
+\end{aligned}
+\]
+<div class="important">To find the injectivity radii, we only need to find for what values \(\theta_i\) is \(\exp(\mathrm{i}\theta_i)\) invertible.</div>
+<h2 id="the_injectivity_radii">The injectivity radii</h2>
+<p>We are finally ready to work out the injectivity radii. For \(\mathrm{U}(n, \mathbb{F})\), the eigenvalues of \(X\) are \(\lambda_i = \mathrm{i} \theta_i\) for \(\theta_i \in \mathbb{R}\).</p>
+<p>The matrix exponential is invertible when \(\exp(\mathrm{i} \theta_i)\) is invertible. But this is just rotation in the complex plane by the angle \(\theta_i\), which is invertible for \(\theta_i \in (-\pi, \pi]\). The injectivity radii are then computed by the constraint \(|\theta_i| = \pi\) for at least one \(i \in 1\ldots n\). </p>
+<p>For \(\mathrm{U}(n, \mathbb{F})\) and \(\mathbb{F} \not\equiv \mathbb{R}\), the largest value of \(\left\lVert  \theta \right\rVert\) achievable subject to the constraints occurs when \(|\theta_i| = \pi\) for all \(i\). Then \(\left\lVert  \theta \right\rVert = \pi \sqrt{n}\). The smallest value of \(\left\lVert  \theta \right\rVert\) occurs when \(|\theta_i| = \begin{cases}\pi, & i = k\\ 0, & i \ne k\end{cases}\) for any \(k \in 1\ldots n\). So</p>
+<div class="important">\[
+\begin{aligned}
+\operatorname{inj}^-_{\mathrm{U}(n, \mathbb{F})} &= \pi, \qquad \mathbb{F} \not\equiv \mathbb{R}\\
+\operatorname{inj}^+_{\mathrm{U}(n, \mathbb{F})} &= \pi \sqrt{n}.
+\end{aligned}
+\]</div>
+<p>For \(\mathrm{SU}(n)\), we have the additional constraint that \(\sum_{i=1}^n \theta_i = 0\). For even \(n\), \(\left\lVert  \theta \right\rVert\) is maximized subject to these constraints when \(n/2\) entries in \(\theta\) are \(+\pi\) and when \(n/2\) entries are \(-\pi\). On the other hand, for odd \(n\), it is maximized when \((n-1)/2\) values each are \(+\pi\) and \(-\pi\) and the \(n\)th value is \(0\). \(\left\lVert  \theta \right\rVert\) is minimized subject to these constraints when there is a single nonzero pair \(\theta_i = -\theta_j = \pi\) for \(j \ne i\). As a result,</p>
+<div class="important">\[
+\begin{aligned}
+\operatorname{inj}^-_{\mathrm{SU}(n)} &= \pi\sqrt{2}\\
+\operatorname{inj}^+_{\mathrm{SU}(n)} &= \pi \sqrt{2 \lfloor n/2 \rfloor}.
+\end{aligned}
+\]</div>
+<p>The constraints on \(\theta\) required for \(\mathrm{O}(n)\) and \(\mathrm{SO}(n)\) are also satisfied by the lower and upper bounds of the norms considered for \(\mathrm{SU}(n)\), so</p>
+<div class="important">\[
+\begin{aligned}
+\operatorname{inj}^-_{\mathrm{O}(n)} = \operatorname{inj}^-_{\mathrm{SO}(n)} &= \pi\sqrt{2}\\
+\operatorname{inj}^+_{\mathrm{O}(n)} = \operatorname{inj}^+_{\mathrm{SO}(n)} &= \pi \sqrt{2 \lfloor n/2 \rfloor}.
+\end{aligned}
+\]</div>
+<p>It&#39;s always a good idea to numerically check that the results make sense. For the 2D and 3D rotations \(\mathrm{SO}(2)\) and \(\mathrm{SO}(3)\), respectively, we then have</p>
+\[
+\begin{aligned}
+\operatorname{inj}^-_{\mathrm{SO}(2)} = \operatorname{inj}^+_{\mathrm{SO}(2)} = \pi\sqrt{2}\\
+\operatorname{inj}^-_{\mathrm{SO}(3)} = \operatorname{inj}^+_{\mathrm{SO}(3)} = \pi\sqrt{2}
+\end{aligned}
+\]
+<p>These injectivity radii correspond to a rotation of 180°. <sup id="fnref:3">[3]</sup> Coming back to our motivating example, if we start from any pose and rotate an object more than 180° in any direction, we can no longer uniquely determine the initial rotational velocity.</p>
+<p>\(\mathrm{U}(1, \mathbb{C})\), the complex unit circle, is isomorphic to \({\mathrm{SO}(2)}\), so it may seem like a contradiction that its injectivity radius is \(\pi\). But this difference is again caused by the choice of metric, which causes the inner product on \({\mathrm{SO}(2)}\) to be scaled by \(\frac{1}{2}\) compared to \(\mathrm{U}(1, \mathbb{C})\).<sup id="fnref:3">[3]</sup></p>
+<p>Analogously, \(\mathrm{U}(1, \mathbb{H})\) represents the unit quaternions &#40;also the compact symplectic group&#41;, which are an alternative way to represent 3D rotations, and is equivalent to \(\mathrm{SU}(2)\). The injectivity radii again only differ by the factor of \(\sqrt{2}\) due to the scaling convention of the metric.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>This has been one of the rare moments where we got to dabble with group theory and manifolds without needing too much geometry. I hope it was enjoyable&#33;</p>
+<h3></h3>
+<p><table class="fndef" id="fndef:1">
+    <tr>
+        <td class="fndef-backref">[1]</td>
+        <td class="fndef-content">The injectivity radius is so called because it is the radius of a geodesic ball within which the exponential map is injective &#40;one-to-one&#41;.</td>
+    </tr>
+</table>
+<table class="fndef" id="fndef:2">
+    <tr>
+        <td class="fndef-backref">[2]</td>
+        <td class="fndef-content">It&#39;s <em>really</em> hard to write anything about manifolds or groups without writing a whole introductory text to differential geometry or group theory.</td>
+    </tr>
+</table>
+<table class="fndef" id="fndef:3">
+    <tr>
+        <td class="fndef-backref">[3]</td>
+        <td class="fndef-content">Because of the skew-hermitian nature of the elements of the Lie algebra, some texts use the scaled Frobenius metric \(g(X, Y) = \frac{1}{2}\left\langle  X,  Y \right\rangle_\mathrm{F}\). In some cases, this allows the norm of a tangent vector to be interpreted as the angle of the rotation. To get the injectivity radii for this metric, one would just divide ours by \(\sqrt{2}\).</td>
+    </tr>
+</table>
+<table class="fndef" id="fndef:4">
+    <tr>
+        <td class="fndef-backref">[4]</td>
+        <td class="fndef-content">This comes from differentiating the constraint \(q^\mathrm{H}q=I_n\). Then we have \(\mathrm{d}{(q^\mathrm{H}q)} = (\mathrm{d}{q})^\mathrm{H}q + q^\mathrm{H} \mathrm{d}{q} = \mathrm{d}(I_n) = 0\). Letting \(X = \mathrm{d}{q}\), then \(X^\mathrm{H}q = -q^\mathrm{H} X = -(X^\mathrm{H}q)^\mathrm{H}\). When \(q\) is the identity matrix, \(X = -X^\mathrm{H}\).</td>
+    </tr>
+</table>
+<table class="fndef" id="fndef:5">
+    <tr>
+        <td class="fndef-backref">[5]</td>
+        <td class="fndef-content">For the complex unitary group, \(\mathrm{i}\) is the usual imaginary number, while for quaternions, it would be a pure unit quaternion.</td>
+    </tr>
+</table>
+</p>
+ ]]>
+  </content:encoded>
     
   <pubDate>Wed, 22 Feb 2023 00:00:00 +0000</pubDate>  
   
@@ -44,11 +188,181 @@
   <title>
     <![CDATA[  Differentiating the LU decomposition  ]]>
   </title>
-  <link> https://sethaxen.com/blog/2021/02/differentiating-the-lu-decomposition/index.html </link>
-  <guid> https://sethaxen.com/blog/2021/02/differentiating-the-lu-decomposition/index.html </guid>
+  <link> https://sethaxen.com/blog/blog/2021/02/differentiating-the-lu-decomposition/index.html </link>
+  <guid> https://sethaxen.com/blog/blog/2021/02/differentiating-the-lu-decomposition/index.html </guid>
   <description>
     <![CDATA[  Deriving differentiation rules for the LU decomposition of square and non-square matrices.  ]]>
   </description>  
+  
+  <content:encoded>
+    <![CDATA[  
+<p><em>I was implementing differentiation rules of the LU decomposition in <a href="https://github.com/JuliaDiff/ChainRules.jl">ChainRules.jl</a> and needed rules that supported non-square matrices, so I worked them out.</em></p>
+<div class="franklin-toc"><ol><li>Introduction</li><li>Square \(A\)</li><li>Wide \(A\)</li><li>Tall \(A\)</li><li>Implementation</li><li>Conclusion</li><li>References</li></ol></div>
+<h2 id="introduction">Introduction</h2>
+<p>For a square matrix \(A \in \mathbb{C}^{m \times n}\), the <a href="https://en.wikipedia.org/wiki/LU_decomposition">LU decomposition</a> is useful for solving systems of equations, inverting \(A\), and computing the determinant.</p>
+<p>This post assumes familiarity with terminology of forward- and reverse-mode differentiation rules. For a succinct review, I recommend reading <a href="https://www.juliadiff.org/ChainRulesCore.jl/stable/arrays.html">the ChainRules guide on deriving array rules</a>.</p>
+<h3 id="definition">Definition</h3>
+<p>The LU decomposition of \(A\) is</p>
+\[P A = L U.\]
+<p>Where \(q = \min(m, n)\), \(L \in \mathbb{C}^{m \times q}\) is a unit lower triangular matrix, that is, a lower triangular matrix whose diagonal entries are all ones. \(U \in \mathbb{C}^{q \times n}\) is an upper triangular matrix. \(P \in \mathbb{R}^{m \times m}\) is a <a href="https://en.wikipedia.org/wiki/Permutation_matrix">permutation matrix</a> whose action on a matrix \(X\) &#40;i.e. \(P X\)&#41; reorders the rows of \(X\). As a permutation matrix, \(P P^\mathrm{T} = P^\mathrm{T} P = I\).</p>
+<h3 id="uses">Uses</h3>
+<p>If we have a system of the form of \(A X = B\) and would like to solve for \(X\), we can use the LU decomposition to write \(L U X = P B\). Then \(X = L^{-1} (U^{-1} (P B))\). Note that the row-swapping action \(P B\) can be computed in-place. We can also easily compute the left-division by the triangular matrices in-place using <a href="https://en.wikipedia.org/wiki/Triangular_matrix#Forward_and_back_substitution">forward and back substitution</a>.</p>
+<p>By setting \(B\) in the above equation to be the identity matrix, then we can compute the inverse of \(A\), that is \(X = A^{-1}\).</p>
+<p>The determinant of \(A\) is \(\det(A) = \det(P) \det(L) \det(U)\). The determinant of a triangular matrix is the product of its diagonal entries, so \(\det(L) = 1\), and \(\det(U) = \prod_{i=1}^n U_{ii}\). \(\det(P) = (-1)^s\), where \(s\) is the number of row swaps encoded by the permutation matrix. So \(\det(A) = (-1)^s \prod_{i=1}^n U_{ii}\), which is very cheap to compute from the decomposition.</p>
+<p>The LU decomposition can still be computed when \(A\) is wide &#40;\(m < n\)&#41; or tall &#40;\(m > n\)&#41;. However, none of the above applications make sense in this case, and I don&#39;t know what it&#39;s useful for.</p>
+<h3 id="motivation">Motivation</h3>
+<p>Often the LU decomposition is computed using LAPACK subroutines, which cannot be automatically differentiated through. Hence, it is necessary to implement custom automatic differentiation rules. <sup id="fnref:HoogAnderssenLukas2011">[1]</sup> derived a pushforward &#40;AKA forward-mode differentiation rule or Jacobian-vector-product&#41; for the LU decomposition for the square case, but I couldn&#39;t find a rule for the wide or tall cases. This is a problem, because I wanted to implement a generic rule for ChainRules.jl that would work for all dense matrices in Julia, where square and non-square dense matrices are all implemented using the same type <code>Matrix</code> &#40;more specifically, as the union of types <code>StridedMatrix</code>&#41;. It is not ideal to write a custom rule that will work for only a subset of matrices of a given type.</p>
+<p>We could always pad \(A\) with zeros to make it square. However, if \(m \ll n\) or \(m \gg n\), then this is wasteful. JAX seems to <a href="https://github.com/google/jax/blob/jax-v0.2.9/jax/_src/lax/linalg.py#L826-L871">use this approach</a>, though it&#39;s possible that internally it does something fancier and doesn&#39;t explicitly allocate or operate on the padding.</p>
+<p>Thankfully, it&#39;s not too hard to work out the pushforwards and pullbacks for the non-square case by splitting the matrices into blocks and working out the rules for the individual blocks. So in this post, we&#39;ll review the pushforward for square \(A\), also working out its pullback, and then we&#39;ll do the same for wide and tall \(A\).</p>
+<h2 id="square_a">Square \(A\)</h2>
+<p>A pushforward for the LU decomposition for square \(A\) is already known <sup id="fnref:HoogAnderssenLukas2011">[1]</sup>. For completeness, I&#39;ve included its derivation, as well as one for the corresponding pullback.</p>
+<h3 id="pushforward">Pushforward</h3>
+<p>We start by differentiating the defining equation:</p>
+\[P \dot{A} = \dot{L} U + L \dot{U}\]
+<p>We can solve both sides to get</p>
+\[L^{-1} P \dot{A} U^{-1} = L^{-1} \dot{L} + \dot{U} U^{-1}\]
+<p>\(\dot{L}\) and \(\dot{U}\) must be at least as sparse as \(L\) and \(U\), respectively. Hence, \(\dot{U}\) is upper triangular, and because the diagonal of \(L\) is constrained to be unit, \(\dot{L}\) will be lower triangular with a diagonal of zeros &#40;strictly lower triangular&#41;. Note also that the inverse of a lower/upper triangular matrix is still lower/upper triangular. Likewise, the product of two lower/upper triangular matrices is still lower/upper triangular.</p>
+<p>Hence the right-hand side is the sum of a strictly lower triangular matrix \(L^{-1} \dot{L}\) and an upper triangular matrix \(\dot{U} U^{-1}\). Let&#39;s introduce the triangularizing operators \(\operatorname{triu}(X)\), which extracts the upper triangle of the matrix \(X\), and \(\operatorname{tril}_-(X)\), which extracts its strict lower triangle &#40;so that \(X = \operatorname{tril}_-(X) + \operatorname{triu}(X)\)&#41;.</p>
+<p>Introducing an intermediate \(\dot{F}\), we can then solve for \(\dot{L}\) and \(\dot{U}\):</p>
+\[\begin{aligned}
+    \dot{F} &= L^{-1} P \dot{A} U^{-1}\\
+    \dot{L} &= L \operatorname{tril}_-(\dot{F})\\
+    \dot{U} &= \operatorname{triu}(\dot{F}) U
+\end{aligned}\]
+<h3 id="pullback">Pullback</h3>
+<p>The corresponding pullback is</p>
+\[\begin{aligned}
+\overline{F} &= \operatorname{tril}_-(L^\mathrm{H} \overline{L}) + \operatorname{triu}(\overline{U} U^\mathrm{H})\\
+\overline{A} &= P^\mathrm{T} L^{-\mathrm{H}} \overline{F} U^{-\mathrm{H}}
+\end{aligned}\]
+<p><details>      To find the pullback, we use the identity of reverse-mode differentiation and properties of the <a href="https://en.wikipedia.org/wiki/Frobenius_inner_product">Frobenius inner product</a> as described in <a href="https://www.juliadiff.org/ChainRulesCore.jl/stable/arrays.html">the ChainRules guide on deriving array rules</a>.</p>
+<p>Here the identity takes the form</p>
+\[\operatorname{Re}\left\langle  \overline{L},  \dot{L} \right\rangle + \operatorname{Re}\left\langle  \overline{U},  \dot{U} \right\rangle = \operatorname{Re}\left\langle  \overline{A},  \dot{A} \right\rangle.\]
+<p>We want to solve for \(\overline{A}\), and we do so by first plugging \(\dot{U}\) and \(\dot{L}\) into the left-hand side of this identity, manipulating to look like the right-hand side, and then solving for \(\overline{A}\).</p>
+\[\begin{aligned}
+\left\langle  \overline{L},  \dot{L} \right\rangle &= \left\langle  \overline{L},  L \operatorname{tril}_-(\dot{F}) \right\rangle = \left\langle  L^\mathrm{H} \overline{L},  \operatorname{tril}_-(\dot{F}) \right\rangle\\
+\left\langle  \overline{U},  \dot{U} \right\rangle &= \left\langle  \overline{U},  \operatorname{triu}(\dot{F}) U \right\rangle = \left\langle  \overline{U} U^\mathrm{H},  \operatorname{triu}(\dot{F}) \right\rangle\\
+\end{aligned}\]
+<p>Because the Frobenius inner product is the sum of all elements of the element-wise product of the second argument and the complex conjugate of the first argument, then for upper triangular \(U\), we have</p>
+\[\left\langle  X,  U \right\rangle = \sum_{ij} X_{ij}^* U_{ij} = \sum_{ij} \operatorname{triu}(X)_{ij}^* U_{ij} = \left\langle  \operatorname{triu}(X),  U \right\rangle.\]
+<p>The same is true for lower-triangular matrices &#40;or, analogously, for any sparsity pattern&#41;. Therefore, </p>
+\[\begin{aligned}
+\left\langle  \overline{L},  \dot{L} \right\rangle &= \left\langle  \operatorname{tril}_-(L^\mathrm{H} \overline{L}),  \dot{F} \right\rangle\\
+\left\langle  \overline{U},  \dot{U} \right\rangle &= \left\langle  \operatorname{triu}(\overline{U} U^\mathrm{H}),  \dot{F} \right\rangle\\
+\left\langle  \overline{L},  \dot{L} \right\rangle + \left\langle  \overline{U},  \dot{U} \right\rangle &= \left\langle  \operatorname{tril}_-(L^\mathrm{H} \overline{L}) + \operatorname{triu}(\overline{U} U^\mathrm{H}),  \dot{F} \right\rangle \doteq \left\langle  \overline{F},  \dot{F} \right\rangle,
+\end{aligned}\]
+<p>where we have introduced an intermediate \(\overline{F}\).</p>
+<p>Continuing by plugging in \(\dot{F}\), we find</p>
+\[\left\langle  \overline{F},  \dot{F} \right\rangle = \left\langle  \overline{F},  L^{-1} P \dot{A} U^{-1} \right\rangle = \left\langle  P^\mathrm{T} L^{-\mathrm{H}} \overline{F} U^{-\mathrm{H}},  \dot{A} \right\rangle\]
+<p>So the pullback of the LU decomposition is written</p>
+\[\begin{aligned}
+\overline{F} &= \operatorname{tril}_-(L^\mathrm{H} \overline{L}) + \operatorname{triu}(\overline{U} U^\mathrm{H})\\
+\overline{A} &= P^\mathrm{T} L^{-\mathrm{H}} \overline{F} U^{-\mathrm{H}}
+\end{aligned}\]
+<p></details><br/></p>
+<p>Note that these expressions use the same elementary operations as solving a system of equations using the LU decomposition, as noted above. The pushforwards and pullbacks can then be computed in-place with no additional allocations.</p>
+<h2 id="wide_a">Wide \(A\)</h2>
+<p>We can write wide \(A\) in blocks \(A = \begin{bmatrix}A_1 & A_2 \end{bmatrix}\), where \(A_1 \in \mathbb{C}^{m \times m}\) and \(A_2  \in \mathbb{C}^{m \times (n - m)}\). It will turn out to be very convenient that \(A_1\) is square. The LU decomposition in terms of these blocks is written</p>
+\[P\begin{bmatrix}A_1 & A_2\end{bmatrix} = L \begin{bmatrix}U_1 & U_2\end{bmatrix},\]
+<p>where \(U_1\) is square upper triangular. This is a system of two equations that we will address separately.</p>
+\[\begin{aligned}
+P A_1 &= L U_1\\
+P A_2 &= L U_2\\
+\end{aligned}\]
+<h3 id="pushforward__2">Pushforward</h3>
+<p>Introducing an intermediate \(\dot{H} = \begin{bmatrix} \dot{H}_1 & \dot{H}_2 \end{bmatrix}\) with the same block structure as \(U\), the complete pushforward is</p>
+\[\begin{aligned}
+    \dot{H} &= L^{-1} P \dot{A}\\
+    \dot{F} &= \dot{H}_1 U_1^{-1}\\
+    \dot{U}_1 &= \operatorname{triu}(\dot{F}) U_1\\
+    \dot{U}_2 &= \dot{H}_2 - \operatorname{tril}_-(\dot{F}) U_2\\
+    \dot{L} &= L \operatorname{tril}_-(\dot{F})\\
+\end{aligned}\]
+<p><details>      Note that the first equation is identical in form to the square LU decomposition. So we can reuse that solution for the pushforward to get</p>
+\[\begin{aligned}
+    \dot{F} &= L^{-1} P \dot{A}_1 U_1^{-1}\\
+    \dot{L} &= L \operatorname{tril}_-(\dot{F})\\
+    \dot{U}_1 &= \operatorname{triu}(\dot{F}) U_1
+\end{aligned}\]
+<p>Now, let&#39;s differentiate the second equation</p>
+\[P \dot{A}_2 = \dot{L} U_2 + L \dot{U}_2\]
+<p>and solve for \(\dot{U}_2\)</p>
+\[\dot{U}_2 = L^{-1} P \dot{A}_2 - L^{-1} \dot{L} U_2.\]
+<p>Plugging in our previous solution for \(\dot{L}\), we find</p>
+\[\dot{U}_2 = L^{-1} P \dot{A}_2 - \operatorname{tril}_-(\dot{F}) U_2.\]
+<p></details><br/></p>
+<h3 id="pullback__2">Pullback</h3>
+<p>Introducing an intermediate \(\overline{H} = \begin{bmatrix} \overline{H}_1 & \overline{H}_2 \end{bmatrix}\) with the same block structure as \(U\), the corresponding pullback is</p>
+\[\begin{aligned}
+\overline{H}_1 &= \left(\operatorname{tril}_-(L^\mathrm{H} \overline{L} - \overline{U}_2 U_2^\mathrm{H}) + \operatorname{triu}(\overline{U}_1 U_1^\mathrm{H})\right) U_1^{-\mathrm{H}}\\
+\overline{H}_2 &= \overline{U}_2\\
+\overline{A} &= P^\mathrm{T} L^{-\mathrm{H}} \overline{H}
+\end{aligned}\]
+<p><details>      Here the reverse-mode identity is</p>
+\[\operatorname{Re}\left\langle  \overline{L},  \dot{L} \right\rangle + \operatorname{Re}\left\langle  \overline{U}_1,  \dot{U}_1 \right\rangle + \operatorname{Re}\left\langle  \overline{U}_2,  \dot{U}_2 \right\rangle = \operatorname{Re}\left\langle  \overline{A},  \dot{A} \right\rangle.\]
+<p>We plug in \(\dot{L}\), \(\dot{U}_1\), and \(\dot{U}_2\) to find</p>
+\[\begin{aligned}
+& \operatorname{Re}\left\langle  \overline{L},  L \operatorname{tril}_-(\dot{F}) \right\rangle + \operatorname{Re}\left\langle  \overline{U}_1,  \operatorname{triu}(\dot{F}) U_1 \right\rangle + \operatorname{Re}\left\langle  \overline{U}_2,  \dot{H}_2 - \operatorname{tril}_-(\dot{F}) U_2 \right\rangle\\
+&= \operatorname{Re}\left\langle  \operatorname{tril}_-(L^\mathrm{H} \overline{L}) - \operatorname{tril}_-(\overline{U}_2 U_2^\mathrm{H}) + \operatorname{triu}(\overline{U}_1 U_1^\mathrm{H}),  \dot{F} \right\rangle + \operatorname{Re}\left\langle  \overline{U}_2,  \dot{H}_2 \right\rangle\\
+&= \operatorname{Re}\left\langle  \left(\operatorname{tril}_-(L^\mathrm{H} \overline{L}) - \operatorname{tril}_-(\overline{U}_2 U_2^\mathrm{H}) + \operatorname{triu}(\overline{U}_1 U_1^\mathrm{H})\right) U_1^{-\mathrm{H}},  \dot{H}_1 \right\rangle + \operatorname{Re}\left\langle  \overline{U}_2,  \dot{H}_2 \right\rangle
+\end{aligned}\]
+<p>Let&#39;s introduce the intermediates</p>
+\[\begin{aligned}
+\overline{H}_1 &= \left(\operatorname{tril}_-(L^\mathrm{H} \overline{L} - \overline{U}_2 U_2^\mathrm{H}) + \operatorname{triu}(\overline{U}_1 U_1^\mathrm{H})\right) U_1^{-\mathrm{H}}\\
+\overline{H}_2 &= \overline{U}_2,
+\end{aligned}\]
+<p>which like \(\dot{H}\) we organize into the block matrix \(\overline{H} = \begin{bmatrix} \overline{H}_1 & \overline{H}_2 \end{bmatrix}\). This block structure lets us rewrite the above identity in terms of \(\overline{H}\) and \(\dot{H}\):</p>
+\[\operatorname{Re}\left\langle  \overline{H}_1,  \dot{H}_1 \right\rangle + \operatorname{Re}\left\langle  \overline{H}_2,  \dot{H}_2 \right\rangle = \operatorname{Re}\left\langle  \overline{H},  \dot{H} \right\rangle\]
+<p>Now we plug in \(\dot{H}\)</p>
+\[\operatorname{Re}\left\langle  \overline{H},  \dot{H} \right\rangle = \operatorname{Re}\left\langle  \overline{H},  L^{-1} P \dot{A} \right\rangle = \operatorname{Re}\left\langle  P^\mathrm{T} L^{-\mathrm{H}} \overline{H},  \dot{A} \right\rangle\]
+<p>We have arrived at the desired form and can solve for \(\overline{A}\):</p>
+\[\overline{A} = P^\mathrm{T} L^{-\mathrm{H}} \overline{H}.\]
+<p></details><br/></p>
+<h2 id="tall_a">Tall \(A\)</h2>
+<p>The tall case is very similar to the wide case, except now we have the block structure</p>
+\[\begin{bmatrix}P_1 \\ P_2 \end{bmatrix} A = \begin{bmatrix}L_1 \\ L_2 \end{bmatrix} U,\]
+<p>where now \(L_1\) is square unit lower triangular, and \(U\) is square upper triangular. This gives us the system of equations</p>
+\[\begin{aligned}
+    P_1 A &= L_1 U\\
+    P_2 A &= L_2 U.
+\end{aligned}\]
+<h3 id="pushforward__3">Pushforward</h3>
+<p>The first equation is again identical to the square case, so we can use it to solve for \(\dot{L}_1\) and \(\dot{U}\). Likewise, the same approach we used to solve \(\dot{U}_2\) in the wide case can be applied here to solve for \(\dot{L}_2\).</p>
+<p>Introducing an intermediate \(\dot{H} = \begin{bmatrix} \dot{H}_1 \\ \dot{H}_2 \end{bmatrix}\) with the same block structure as \(L\), the complete pushforward is</p>
+\[\begin{aligned}
+    \dot{H} &= P \dot{A} U^{-1}\\
+    \dot{F} &= L_1^{-1} \dot{H}_1\\
+    \dot{L}_1 &= L_1 \operatorname{tril}_-(\dot{F})\\
+    \dot{L}_2 &= \dot{H}_2 - L_2 \operatorname{triu}(\dot{F})\\
+    \dot{U} &= \operatorname{triu}(\dot{F}) U
+\end{aligned}\]
+<h3 id="pullback__3">Pullback</h3>
+<p>Introducing an intermediate \(\overline{H} = \begin{bmatrix} \overline{H}_1 \\ \overline{H}_2 \end{bmatrix}\) with the same block structure as \(L\), the corresponding pullback is</p>
+\[\begin{aligned}
+\overline{H}_1 &= L_1^{-\mathrm{H}} \left(\operatorname{tril}_-(L_1^\mathrm{H} \overline{L}_1) +  \operatorname{triu}(\overline{U} U^\mathrm{H} - L_2^\mathrm{H} \overline{L}_2)\right)\\
+\overline{H}_2 &= \overline{L}_2\\
+\overline{A} &= P^\mathrm{T} \overline{H} U^{-\mathrm{H}}
+\end{aligned}\]
+<h2 id="implementation">Implementation</h2>
+<p>The product of this derivation is <a href="https://github.com/JuliaDiff/ChainRules.jl/pull/354">this pull request to ChainRules.jl</a>, which includes tests of the rules using <a href="https://github.com/JuliaDiff/FiniteDifferences.jl">FiniteDifferences.jl</a>.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>The techniques employed here are general and can be used for differentiation rules for other factorizations of non-square matrices. A recent paper used a similar approach to derive the pushforwards and pullbacks of the \(QR\) and \(LQ\) decompositions<sup id="fnref:RobertsRoberts2020">[2]</sup>.</p>
+<h2 id="references">References</h2>
+<p><table class="fndef" id="fndef:HoogAnderssenLukas2011">
+    <tr>
+        <td class="fndef-backref">[1]</td>
+        <td class="fndef-content">de Hoog F.R., Anderssen R.S., and Lukas M.A. &#40;2011&#41; Differentiation of matrix functionals using triangular factorization. Mathematics of Computation, 80 &#40;275&#41;. p. 1585. doi: <a href="http://doi.org/10.1090/S0025-5718-2011-02451-8">10.1090/S0025-5718-2011-02451-8</a>.</td>
+    </tr>
+</table>
+<table class="fndef" id="fndef:RobertsRoberts2020">
+    <tr>
+        <td class="fndef-backref">[2]</td>
+        <td class="fndef-content">Roberts D.A.O. and Roberts L.R. &#40;2020&#41; QR and LQ Decomposition Matrix Backpropagation Algorithms for Square, Wide, and Deep – Real or Complex – Matrices and Their Software Implementation. arXiv: <a href="https://arxiv.org/abs/2009.10071">2009.10071</a>.</td>
+    </tr>
+</table>
+</p>
+ ]]>
+  </content:encoded>
     
   <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>  
   
