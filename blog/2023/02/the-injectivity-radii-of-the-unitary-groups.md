@@ -9,6 +9,8 @@ rss_description = description
 maxtoclevel = 2
 +++
 
+_This post was prompted by a user question raised in [this issue](https://github.com/JuliaManifolds/Manifolds.jl/issues/573) on [Manifolds.jl](https://github.com/JuliaManifolds/Manifolds.jl). [Ronny Bergmann](https://ronnybergmann.net/) implemented these results in Manifolds.jl in [this PR](https://github.com/JuliaManifolds/Manifolds.jl/pull/576)._
+
 \tableofcontents
 
 ## Introduction
