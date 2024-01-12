@@ -33,6 +33,7 @@
   
   <content:encoded>
     <![CDATA[  
+<p><em>This post was prompted by a user question raised in <a href="https://github.com/JuliaManifolds/Manifolds.jl/issues/573">this issue</a> on <a href="https://github.com/JuliaManifolds/Manifolds.jl">Manifolds.jl</a>. <a href="https://ronnybergmann.net/">Ronny Bergmann</a> implemented these results in Manifolds.jl in <a href="https://github.com/JuliaManifolds/Manifolds.jl/pull/576">this PR</a>.</em></p>
 <div class="franklin-toc"><ol><li>Introduction</li><li>The injectivity radius</li><li>The unitary group&#40;s&#41;</li><li>Relevant geometric properties</li><li>Relevant linear algebraic properties</li><li>The injectivity radii</li><li>Conclusion</li></ol></div>
 <h2 id="introduction">Introduction</h2>
 <p>Suppose you held up an object and began rotating it at a fixed speed. After some amount of time, you stop rotating it. If I know the starting pose of the object and the amount of time that has passed, under what conditions can I also tell you the rotational velocity &#40;both direction and speed&#41; of the spinning object?</p>
