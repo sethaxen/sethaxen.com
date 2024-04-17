@@ -26,7 +26,7 @@ body{
 
 @media (min-width: 768px) {
 .content {
-    max-width: 60rem;
+    max-width: 65rem;
     margin-left: 10rem;
 }
 .franklin-content {
@@ -110,9 +110,10 @@ body{
 
 .franklin-content h1, h2, h3 {
     font-family: "PT Sans", Helvetica, Arial, sans-serif;
-    margin-top: 0;
+    margin-top: 0.5em;
     margin-bottom: 0.5em;
     border-bottom: none;
+    clear: both;
 }
 .franklin-content h1 { font-size: 2.4rem; }
 .franklin-content h2 { font-size: 2.0rem; }
@@ -188,4 +189,106 @@ pre > code {
     padding: 0.5rem;
     margin: 1em;
     overflow: auto;
+}
+
+
+
+.project-card {
+    background-color: var(--detailscolor);
+    border-radius: 1rem;
+    padding: 0.75rem 1rem 0.75rem;
+    /* margin: 1em; */
+    overflow: auto;
+    float: left;
+    width: 250px;
+    margin-bottom: 15px;
+    transition: box-shadow ease 0.2s;
+}
+
+.project-list::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.project-card .project-image img {
+    width: 100%;
+    display: block;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Make image URL fade when hovered over */
+.project-card:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Container styling for the link */
+.project-card .project-image {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+/* Ensure the image fits the container */
+.project-card .project-image img {
+    display: block;
+    width: 100%;
+    transition: opacity 0.3s ease;
+}
+
+/* Styling and positioning the :after pseudo-element */
+.project-card .project-image::after {
+    content: "🔗";  /* Link emoji */
+    font-family: "FontAwesome";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(0, 0, 0);
+    font-size: 5rem;  /* Adjust size as needed */
+    opacity: 0;       /* Hide by default */
+    transition: opacity 0.2s ease;
+    pointer-events: none;  /* Ensures the emoji does not interfere with link functionality */
+}
+
+/* Hover effects */
+.project-card:hover .project-image img {
+    opacity: 0.3;  /* Image fade effect */
+}
+
+.project-card:hover .project-image::after {
+    opacity: 1;  /* Show the emoji overlay */
+}
+
+.project-card h3 {
+    margin-top: 0em;
+}
+
+.filter-toolbar {
+    display: flex;
+    background-color: #007BFF; /* Blue background */
+    border-radius: 5px; /* Rounded corners */
+    overflow: hidden; /* Ensures that child elements do not break border rounding */
+    margin-bottom: 15px;
+}
+
+.filter-btn {
+    flex: 1; /* Distribute space equally among buttons */
+    background-color: transparent; /* Transparent background */
+    color: white; /* White text color */
+    border: none; /* No borders between buttons */
+    padding: 10px 15px; /* Padding for spacing */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+    outline: none; /* Remove focus outline */
+}
+
+.filter-btn:hover, .filter-btn:focus {
+    background-color: #0056b3; /* Darker blue on hover/focus */
+}
+
+.filter-btn.active {
+    background-color: #b3d7ff; /* Lighter blue for active state */
 }

@@ -61,3 +61,20 @@ Useful commands inspired by the physics package
     ~~~</summary>
     ~~~
 }
+
+<!-- syntax \project{name}{image}{url}{tags}{description} -->
+\newcommand{\project}[5]{
+~~~
+<div class="project-card !#4">
+<a class="project-image" href="!#3">
+<img src="!#2" alt="!#1">
+</a>
+<a href="!#3">
+<h3>!#1</h3>
+</a>
+<div class="project-description">~~~
+!#5
+~~~</div>
+</div>
+~~~
+}
