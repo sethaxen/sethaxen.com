@@ -26,7 +26,7 @@ body{
 
 @media (min-width: 768px) {
 .content {
-    max-width: 60rem;
+    max-width: 65rem;
     margin-left: 10rem;
 }
 .franklin-content {
