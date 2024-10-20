@@ -86,9 +86,9 @@ Building a consensus probabilistic model of paleoclimate from simulations of cli
 Accelerating Bayesian inference and early diagnostics for probabilistic models.
 }
 
-\project{Transforms}{}{https://github.com/mjhajharia/transforms}{machine-learning}{
+\project{Transforms}{}{https://github.com/bob-carpenter/transforms}{machine-learning}{
 Working out and benchmarking efficient invertible transforms from unconstrained to constrained spaces for probabilistic programming.
-See Stan implementations for [probability vectors](https://github.com/mjhajharia/transforms) and for [orthogonal matrices](https://github.com/sethaxen/stan_semiorthogonal_transforms).
+See Stan implementations for [probability vectors](https://github.com/bob-carpenter/transforms) and for [orthogonal matrices](https://github.com/sethaxen/stan_semiorthogonal_transforms).
 Papers in prep.
 }
 
