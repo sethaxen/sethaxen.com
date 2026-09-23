@@ -8,7 +8,7 @@ function hfun_blogposts()
     io = IOBuffer()
     for year in curyear:-1:2021
         ys = "$year"
-        year < curyear && write(io, "\n**$year**\n")
+        yio = IOBuffer()
         for month in 12:-1:1
             ms = "0"^(month < 10) * "$month"
             base = joinpath("blog", ys, ms)
@@ -33,8 +33,12 @@ function hfun_blogposts()
                 lines[i] = "\n$date: [**$title**]($url)\n"
             end
             # sort by day
-            foreach(line -> write(io, line), lines[sortperm(days, rev=true)])
+            foreach(line -> write(yio, line), lines[sortperm(days, rev=true)])
         end
+        # only write the year if it contains at least one post
+        iszero(yio.size) && continue
+        year < curyear && write(io, "\n**$year**\n")
+        write(io, take!(yio))
     end
     iszero(io.size) && write(io, "_Coming soon_.")
     # markdown conversion adds `<p>` beginning and end but
