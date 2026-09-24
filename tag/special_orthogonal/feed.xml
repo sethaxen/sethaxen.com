@@ -9,11 +9,11 @@
 
   <channel>
     <title>
-      <![CDATA[  Seth Axen&#39;s blog  ]]>
+      <![CDATA[  Seth Axen — Technical Writing  ]]>
     </title>
     <link> https://sethaxen.com/blog </link>
     <description>
-      <![CDATA[  Random thoughts on math, statistics, and code that I haven&#39;t felt like turning into papers.  ]]>
+      <![CDATA[  Technical notes on numerical methods, statistics, Bayesian computation, automatic differentiation, geometry, and scientific software.  ]]>
     </description>
     <atom:link
       href="https://sethaxen.com/blog/feed.xml"
