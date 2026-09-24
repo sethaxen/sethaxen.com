@@ -65,63 +65,79 @@
 ~~~
 <div id="toolbar" class="filter-toolbar">
     <button class="filter-btn" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="machine-learning">Machine Learning</button>
-    <button class="filter-btn" data-filter="python">Python</button>
-    <button class="filter-btn" data-filter="julia">Julia</button>
-    <button class="filter-btn" data-filter="visualization">Visualization</button>
+    <button class="filter-btn" data-filter="bayesian">Bayesian Computation</button>
+    <button class="filter-btn" data-filter="sciml">Scientific ML</button>
+    <button class="filter-btn" data-filter="numerical-computing">Numerical Computing</button>
+    <button class="filter-btn" data-filter="scientific-software">Scientific Software</button>
+    <button class="filter-btn" data-filter="automatic-differentiation">Automatic Differentiation</button>
+    <button class="filter-btn" data-filter="application">Application</button>
 </div>
 ~~~
 
 ~~~<div class='project-list'>~~~
 
-\project{ArviZ: exploratory analysis of Bayesian models}{https://julia.arviz.org/ArviZ/stable/assets/logo.png}{https://www.arviz.org/}{machine-learning visualization julia python}{
-Core contributor, governance member, and primary dev of Julia packages.
+\project{ArviZ: exploratory analysis of Bayesian models}{https://julia.arviz.org/ArviZ/stable/assets/logo.png}{https://www.arviz.org/}{bayesian scientific-software}{
+Core contributor and governance member of the ArviZ project providing tools for exploratory analysis of Bayesian models.
+Lead developer of [ArviZ.jl](https://github.com/arviz-devs/ArviZ.jl), [MCMCDiagnosticTools.jl](https://github.com/TuringLang/MCMCDiagnosticTools.jl), [PosteriorStats.jl](https://github.com/arviz-devs/PosteriorStats.jl), [PSIS.jl](https://github.com/arviz-devs/PSIS.jl) and [InferenceObjects.jl](https://github.com/arviz-devs/InferenceObjects.jl)
 }
 
-\project{PollenClim}{https://images.spr.so/cdn-cgi/imagedelivery/j42No7y-dcokJuNgXeA0ig/e29fd6b9-d490-46c2-b897-5c5d91ab1cd4/pollenclim_what-2-1/w=1080,quality=80,fit=scale-down}{https://mlcolab.org/resources/integration-of-paleoclimate-models-and-proxies}{machine-learning python sciml}{
+\project{CAGPJax}{}{https://github.com/sethaxen/CAGPJax}{sciml bayesian scientific-software}{
+A JAX library providing scalable Gaussian-process inference that represents uncertainty arising from limited computation.
+}
+
+\project{expax}{}{https://github.com/sethaxen/expax}{numerical-computing scientific-software}{
+A JAX library for highly parallel matrix-free computation of the action of the matrix exponential.
+}
+
+\project{PollenClim}{https://images.spr.so/cdn-cgi/imagedelivery/j42No7y-dcokJuNgXeA0ig/e29fd6b9-d490-46c2-b897-5c5d91ab1cd4/pollenclim_what-2-1/w=1080,quality=80,fit=scale-down}{https://mlcolab.org/resources/integration-of-paleoclimate-models-and-proxies}{sciml application}{
 Building a consensus probabilistic model of paleoclimate from simulations of climate models and fossilized pollen data.
 }
 
-\project{Pathfinder.jl}{https://images.spr.so/cdn-cgi/imagedelivery/j42No7y-dcokJuNgXeA0ig/2514118c-8d6f-4aa3-b768-b1d029f7eea8/index/w=1200,quality=80,fit=scale-down}{https://mlcolab.org/resources/pathfinderjl-early-diagnostics-for-probabilistic-models-and-faster-mcmc-warmup}{machine-learning julia}{
+\project{Pathfinder.jl}{https://images.spr.so/cdn-cgi/imagedelivery/j42No7y-dcokJuNgXeA0ig/2514118c-8d6f-4aa3-b768-b1d029f7eea8/index/w=1200,quality=80,fit=scale-down}{https://mlcolab.org/resources/pathfinderjl-early-diagnostics-for-probabilistic-models-and-faster-mcmc-warmup}{bayesian scientific-software}{
 Accelerating Bayesian inference and early diagnostics for probabilistic models.
+I wrote this package both to accelerate my models and to [test some methodological hypotheses](https://mlcolab.org/public-events/faster-bayesian-inference-with-pathfinder).
 }
 
-\project{Transforms}{}{https://github.com/bob-carpenter/transforms}{machine-learning}{
+\project{Transforms}{}{https://github.com/bob-carpenter/transforms}{bayesian scientific-software}{
 Working out and benchmarking efficient invertible transforms from unconstrained to constrained spaces for probabilistic programming.
 See Stan implementations for [probability vectors](https://github.com/bob-carpenter/transforms) and for [orthogonal matrices](https://github.com/sethaxen/stan_semiorthogonal_transforms).
-Papers in prep.
 }
 
-\project{e3fp}{/assets/project_images/e3fp.jpeg}{https://github.com/keiserlab/e3fp}{machine-learning python}{
-3D-aware fingerprint representations of small molecules for machine learning.
-}
-
-\project{JuliaManifolds}{https://juliamanifolds.github.io/juliamanifolds/assets/logo.png}{https://juliamanifolds.github.io/}{julia}{
+\project{JuliaManifolds}{https://juliamanifolds.github.io/stable/assets/logo.png}{https://juliamanifolds.github.io/}{numerical-computing scientific-software}{
 Co-author of [ManifoldsBase.jl](https://github.com/JuliaManifolds/ManifoldsBase.jl) interface for defining manifolds and algorithms on those manifolds, along with implementations in [Manifolds.jl](https://github.com/JuliaManifolds/Manifolds.jl). [paper](https://doi.org/10.1145/3618296)
 }
 
-\project{ChainRules}{https://juliadiff.org/ChainRulesCore.jl/stable/assets/logo.svg}{https://juliadiff.org/ChainRulesCore.jl/stable/}{julia}{
-Core contributor to tools for defining and testing AD rules across the Julia ecosystem.
+\project{ChainRules}{https://juliadiff.org/ChainRulesCore.jl/stable/assets/logo.svg}{https://juliadiff.org/ChainRulesCore.jl/stable/}{automatic-differentiation scientific-software}{
+Tools for defining and testing AD rules across the Julia AD ecosystem. Core contributor.
 }
 
+\project{e3fp}{/assets/project_images/e3fp.jpeg}{https://github.com/keiserlab/e3fp}{sciml scientific-software application}{
+3D-aware fingerprint representations of small molecules for machine learning.
+[paper](http://dx.doi.org/10.1021/acs.jmedchem.7b00696)
+}
+
+<!--
 \project{Pathfinder Benchmarks}{https://images.spr.so/cdn-cgi/imagedelivery/j42No7y-dcokJuNgXeA0ig/3ecbe140-32e4-4302-a02b-b76d66655312/Pathfinder_benchmarks_poster_BayesComp_2023-1/w=1000}{https://mlcolab.org/public-events/faster-bayesian-inference-with-pathfinder}{machine-learning julia}{
 Experimenting with different uses of Pathfinder for accelerating Bayesian modeling workflows.
-}
+}-->
 
 <!-- \project{Frequency-informed linear discriminative learning}{}{}{machine-learning}{
 } -->
 
+<!--
 \project{Calibrated confidence bands for ECDFs}{/assets/project_images/ecdf_confidence_bands.png}{https://nbviewer.org/gist/sethaxen/06c83cace937a19dd55d4b6ccedbec82}{machine-learning visualization python}{
 Numerical experiments testing the calibration of confidence bands for ECDF plots.
-}
+}-->
 
-\project{Intro to Supervised learning}{https://user-images.githubusercontent.com/8673634/161941600-b1c31af3-df9b-4481-bb6f-1e25a4f849d2.gif}{https://mlcolab.github.io/IntroML.jl/2023.07.14/supervised_learning.html}{machine-learning visualization}{
+\project{Intro to Supervised learning}{https://user-images.githubusercontent.com/8673634/161941600-b1c31af3-df9b-4481-bb6f-1e25a4f849d2.gif}{https://mlcolab.github.io/IntroML.jl/2023.07.14/supervised_learning.html}{}{
 Interactive teaching resource on supervised learning, from linear regression to neural networks.
 Developed for the [IntroML workshop series](https://mlcolab.org/resources/introml-november-2023-workshop-materials) at the University of Tübingen.
 }
 
+<!--
 \project{ManifoldMeasures}{}{https://github.com/JuliaManifolds/ManifoldMeasures.jl}{machine-learning julia}{
 Lightweight implementations of common manifold distributions for Bayesian inference.
 }
+-->
 
 ~~~</div>~~~
