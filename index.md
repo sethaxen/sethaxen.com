@@ -8,7 +8,7 @@ I develop and implement statistical and numerical methods for scientific computi
 Currently I work at the [ML ⇌ Science Colaboratory](https://mlcolab.org/) at the [University of Tübingen](https://uni-tuebingen.de/).
 I hold a PhD in Biological and Medical Informatics from UCSF, and my work spans probabilistic modeling, scientific software, and computational methods across several applied domains.
 
-I'm currently exploring industry roles where I can combine research, probabilistic machine learning, and software engineering.
+**I'm currently exploring industry roles where I can combine research, probabilistic machine learning, and software engineering.**
 
 To get a taste of the kinds of problems I've tackled, [see work →](./projects)
 
