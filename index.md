@@ -10,7 +10,7 @@ I hold a PhD in Biological and Medical Informatics from UCSF, and my work spans 
 
 **I'm currently exploring industry roles where I can combine research, probabilistic machine learning, and software engineering.**
 
-To get a taste of the kinds of problems I've tackled, [see work →](./projects)
+To get a taste of the kinds of problems I've tackled, see [selected projects →](./projects)
 
 ## Experience
 
