@@ -5,17 +5,17 @@ The website_* must be defined for the RSS to work
 -->
 @def generate_rss = true
 @def website_title = "Seth Axen"
-@def website_descr = "Seth Axen"
-@def website_url   = "https://sethaxen.com"
+@def website_descr = "Computational scientist and machine learning research engineer specializing in Bayesian inference, scientific machine learning, numerical computing, and open-source scientific software."
+@def website_url = "https://sethaxen.com"
 @def repo_url = "https://github.com/sethaxen/sethaxen.com"
 
 @def author = "Seth Axen"
 @def image = "https://sethaxen.com/assets/seth.jpg"
 
 @def generate_rss = true
-@def rss_website_title = "Seth Axen's blog"
-@def rss_website_descr = "Random thoughts on math, statistics, and code that I haven't felt like turning into papers."
-@def rss_website_url   = "https://sethaxen.com/blog"
+@def rss_website_title = "Seth Axen — Technical Writing"
+@def rss_website_descr = "Technical notes on numerical methods, statistics, Bayesian computation, automatic differentiation, geometry, and scientific software."
+@def rss_website_url = "https://sethaxen.com/blog"
 @def rss_full_content = true
 
 @def mintoclevel = 2
